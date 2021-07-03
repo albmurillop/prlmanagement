@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: mongo
+      password: mongo
+      database: prl
+      port: 27017
+      host: localhost
+
+  http:
+    encoding:
+      charset: UTF-8
+      
+  main:
+    allow-bean-definition-overriding: true
