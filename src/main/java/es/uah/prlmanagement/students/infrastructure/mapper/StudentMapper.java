@@ -11,7 +11,7 @@ import es.uah.prlmanagement.students.domain.StudentIncorporatedDate;
 import es.uah.prlmanagement.students.domain.StudentLocation;
 import es.uah.prlmanagement.students.domain.StudentPosition;
 import es.uah.prlmanagement.students.infrastructure.StudentDTO;
-import es.uah.prlmanagement.students.infrastructure.persistence.StudentDocument;
+import es.uah.prlmanagement.students.infrastructure.persistence.StudentEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Component
 public class StudentMapper {
 
-    public Student toDomain(StudentDocument student) {
+    public Student toDomain(StudentEntity student) {
         return new Student(
             new Identifier(student.getId()),
             new StudentFullname(student.getFullname()),
@@ -48,12 +48,12 @@ public class StudentMapper {
         );
     }
 
-    public List<Student> toDomainList(List<StudentDocument> students) {
+    public List<Student> toDomainList(List<StudentEntity> students) {
         return students.stream().map(this::toDomain).collect(Collectors.toList());
     }
 
-    public StudentDocument toDocument(Student student) {
-        return new StudentDocument(
+    public StudentEntity toEntity(Student student) {
+        return new StudentEntity(
             student.id().value(),
             student.fullname().value(),
             student.employeeId().value(),
