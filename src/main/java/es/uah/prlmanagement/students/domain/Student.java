@@ -39,8 +39,8 @@ public class Student extends AggregateRoot {
     }
 
     public static Student register(Identifier id, StudentFullname fullname, EmployeeId employeeId, StudentEmail email,
-                                 StudentActive active, StudentIncorporatedDate incorporatedDate,
-                                 StudentDepartment department, StudentPosition position, StudentLocation location) {
+                                   StudentActive active, StudentIncorporatedDate incorporatedDate,
+                                   StudentDepartment department, StudentPosition position, StudentLocation location) {
         Student student = new Student(id, fullname, employeeId, email, active, incorporatedDate, department, position,
             location);
         student.registerEvent(new StudentRegisterEvent(id.value(), fullname.value(), employeeId.value(),

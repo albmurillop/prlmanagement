@@ -5,14 +5,25 @@ server:
     include-binding-errors: always
 
 spring:
-  data:
-    mongodb:
-      authentication-database: admin
-      username: mongo
-      password: mongo
-      database: prl
-      port: 27017
-      host: localhost
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/prl
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: validate
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
   http:
     encoding:
@@ -20,3 +31,9 @@ spring:
       
   main:
     allow-bean-definition-overriding: true
+
+uah:
+  rabbitmq:
+    exchange: uah.prl.exchange
+    queue: uah.prl.queue
+    routingkey: uah.prl.routingkey

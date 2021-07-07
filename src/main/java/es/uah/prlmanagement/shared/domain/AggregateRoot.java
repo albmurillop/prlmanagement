@@ -8,7 +8,7 @@ public abstract class AggregateRoot {
 
     private List<DomainEvent> events = new ArrayList<>();
 
-    protected List<DomainEvent> pullEvents() {
+    public List<DomainEvent> pullEvents() {
         List<DomainEvent> events = this.events;
         this.events = Collections.emptyList();
         return events;

@@ -62,7 +62,7 @@ public class StudentMapper {
             student.incorporatedDate().value(),
             student.department().value(),
             student.position().value(),
-            student.position().value()
+            student.location().value()
         );
     }
 }
