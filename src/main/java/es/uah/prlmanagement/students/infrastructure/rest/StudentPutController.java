@@ -1,6 +1,6 @@
 package es.uah.prlmanagement.students.infrastructure.rest;
 
-import es.uah.prlmanagement.students.application.StudentRegister;
+import es.uah.prlmanagement.students.application.register.StudentRegister;
 import es.uah.prlmanagement.students.infrastructure.StudentDTO;
 import es.uah.prlmanagement.students.infrastructure.mapper.StudentMapper;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class StudentPutController {
 
     @PutMapping("")
     public ResponseEntity<?> execute(@RequestBody StudentDTO student) {
-        register.execute(mapper.toDomain(student));
+        register.execute(mapper.toRegisterCommand(student));
         return ResponseEntity.ok().build();
     }
 }

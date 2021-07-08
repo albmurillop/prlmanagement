@@ -2,6 +2,7 @@ package es.uah.prlmanagement.students.infrastructure.mapper;
 
 import es.uah.prlmanagement.shared.domain.EmployeeId;
 import es.uah.prlmanagement.shared.domain.Identifier;
+import es.uah.prlmanagement.students.application.register.StudentRegisterCommand;
 import es.uah.prlmanagement.students.domain.Student;
 import es.uah.prlmanagement.students.domain.StudentActive;
 import es.uah.prlmanagement.students.domain.StudentDepartment;
@@ -34,20 +35,6 @@ public class StudentMapper {
         );
     }
 
-    public Student toDomain(StudentDTO student) {
-        return new Student(
-            new Identifier(student.id()),
-            new StudentFullname(student.fullname()),
-            new EmployeeId(student.employeeId()),
-            new StudentEmail(student.email()),
-            new StudentActive(student.active()),
-            new StudentIncorporatedDate(student.incorporatedDate()),
-            new StudentDepartment(student.department()),
-            new StudentPosition(student.position()),
-            new StudentLocation(student.location())
-        );
-    }
-
     public List<Student> toDomainList(List<StudentEntity> students) {
         return students.stream().map(this::toDomain).collect(Collectors.toList());
     }
@@ -63,6 +50,20 @@ public class StudentMapper {
             student.department().value(),
             student.position().value(),
             student.location().value()
+        );
+    }
+
+    public StudentRegisterCommand toRegisterCommand(StudentDTO student) {
+        return new StudentRegisterCommand(
+            student.id(),
+            student.fullname(),
+            student.employeeId(),
+            student.email(),
+            student.active(),
+            student.incorporatedDate(),
+            student.department(),
+            student.position(),
+            student.location()
         );
     }
 }

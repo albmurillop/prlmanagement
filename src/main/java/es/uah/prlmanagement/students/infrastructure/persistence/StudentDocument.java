@@ -1,17 +1,12 @@
 package es.uah.prlmanagement.students.infrastructure.persistence;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
 
-@Document(collection = "students")
 public class StudentDocument {
 
     public static final String ID = "id";
     public static final String COLLECTION_NAME = "students";
 
-    @Id
     private String id;
 
     private String fullname;
