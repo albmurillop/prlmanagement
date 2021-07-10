@@ -6,23 +6,23 @@ import es.uah.prlmanagement.shared.domain.Identifier;
 
 public class Student extends AggregateRoot {
 
-    private Identifier id;
+    private final Identifier id;
 
-    private StudentFullname fullname;
+    private final StudentFullname fullname;
 
-    private EmployeeId employeeId;
+    private final EmployeeId employeeId;
 
-    private StudentEmail email;
+    private final StudentEmail email;
 
-    private StudentActive active;
+    private final StudentActive active;
 
-    private StudentIncorporatedDate incorporatedDate;
+    private final StudentIncorporatedDate incorporatedDate;
 
-    private StudentDepartment department;
+    private final StudentDepartment department;
 
-    private StudentPosition position;
+    private final StudentPosition position;
 
-    private StudentLocation location;
+    private final StudentLocation location;
 
     public Student(Identifier id, StudentFullname fullname, EmployeeId employeeId, StudentEmail email,
                    StudentActive active, StudentIncorporatedDate incorporatedDate, StudentDepartment department,
@@ -43,7 +43,7 @@ public class Student extends AggregateRoot {
                                    StudentDepartment department, StudentPosition position, StudentLocation location) {
         Student student = new Student(id, fullname, employeeId, email, active, incorporatedDate, department, position,
             location);
-        student.registerEvent(new StudentRegisterEvent(id.value(), fullname.value(), employeeId.value(),
+        student.registerEvent(new StudentRegistered(id.value(), fullname.value(), employeeId.value(),
             email.value()));
         return student;
     }

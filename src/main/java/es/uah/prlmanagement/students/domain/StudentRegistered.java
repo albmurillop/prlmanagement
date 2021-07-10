@@ -4,15 +4,15 @@ import es.uah.prlmanagement.shared.domain.DomainEvent;
 
 import java.util.Objects;
 
-public class StudentRegisterEvent extends DomainEvent {
+public class StudentRegistered extends DomainEvent {
 
-    private String fullname;
+    private final String fullname;
 
-    private String employeeId;
+    private final String employeeId;
 
-    private String email;
+    private final String email;
 
-    public StudentRegisterEvent(String aggregateId, String fullname, String employeeId, String email) {
+    public StudentRegistered(String aggregateId, String fullname, String employeeId, String email) {
         super(aggregateId);
         this.fullname = fullname;
         this.employeeId = employeeId;
@@ -44,7 +44,7 @@ public class StudentRegisterEvent extends DomainEvent {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        StudentRegisterEvent that = (StudentRegisterEvent) o;
+        StudentRegistered that = (StudentRegistered) o;
         return fullname.equals(that.fullname) &&
             employeeId.equals(that.employeeId) &&
             email.equals(that.email);

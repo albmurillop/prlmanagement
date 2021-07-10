@@ -5,11 +5,11 @@ import java.util.UUID;
 
 public abstract class DomainEvent {
 
-    private String aggregateId;
+    private final String aggregateId;
 
-    private String eventId;
+    private final String eventId;
 
-    private String occurredOn;
+    private final String occurredOn;
 
     public DomainEvent(String aggregateId) {
         this.aggregateId = aggregateId;
