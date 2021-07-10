@@ -24,9 +24,9 @@ public class Student extends AggregateRoot {
 
     private final StudentLocation location;
 
-    public Student(Identifier id, StudentFullname fullname, EmployeeId employeeId, StudentEmail email,
-                   StudentActive active, StudentIncorporatedDate incorporatedDate, StudentDepartment department,
-                   StudentPosition position, StudentLocation location) {
+    public Student(final Identifier id, final StudentFullname fullname, final EmployeeId employeeId,
+                   final StudentEmail email, final StudentActive active, final StudentIncorporatedDate incorporatedDate,
+                   final StudentDepartment department, final StudentPosition position, final StudentLocation location) {
         this.id = id;
         this.fullname = fullname;
         this.employeeId = employeeId;
@@ -38,9 +38,10 @@ public class Student extends AggregateRoot {
         this.location = location;
     }
 
-    public static Student register(Identifier id, StudentFullname fullname, EmployeeId employeeId, StudentEmail email,
-                                   StudentActive active, StudentIncorporatedDate incorporatedDate,
-                                   StudentDepartment department, StudentPosition position, StudentLocation location) {
+    public static Student register(final Identifier id, final StudentFullname fullname, final EmployeeId employeeId,
+                                   final StudentEmail email, final StudentActive active,
+                                   final StudentIncorporatedDate incorporatedDate, final StudentDepartment department,
+                                   final StudentPosition position, final StudentLocation location) {
         Student student = new Student(id, fullname, employeeId, email, active, incorporatedDate, department, position,
             location);
         student.registerEvent(new StudentRegistered(id.value(), fullname.value(), employeeId.value(),

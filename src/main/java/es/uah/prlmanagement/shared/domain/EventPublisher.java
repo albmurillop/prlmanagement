@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface EventPublisher {
 
-    void execute(List<DomainEvent> events);
+    void execute(final List<DomainEvent> events);
 }

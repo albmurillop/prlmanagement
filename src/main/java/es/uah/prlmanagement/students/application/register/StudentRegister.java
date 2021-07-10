@@ -27,7 +27,7 @@ public class StudentRegister {
     }
 
     public void execute(final StudentRegisterCommand studentRegisterCommand) {
-        Student student = Student.register(
+        final Student student = Student.register(
             new Identifier(studentRegisterCommand.id()),
             new StudentFullname(studentRegisterCommand.fullname()),
             new EmployeeId(studentRegisterCommand.employeeId()),

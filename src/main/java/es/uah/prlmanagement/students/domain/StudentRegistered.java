@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public class StudentRegistered extends DomainEvent {
 
+    private static final String EVENT_NAME = "student.registered";
+
     private final String fullname;
 
     private final String employeeId;
@@ -22,7 +24,7 @@ public class StudentRegistered extends DomainEvent {
 
     @Override
     public String eventName() {
-        return "student.registered";
+        return EVENT_NAME;
     }
 
     public String fullname() {
