@@ -9,29 +9,25 @@ import java.util.Objects;
 
 public class Course extends AggregateRoot {
 
-    private Identifier id;
+    private final Identifier id;
 
-    private CourseName name;
+    private final CourseName name;
 
-    private CourseCategory category;
+    private final CourseCategory category;
 
     private List<Training> trainings;
 
-    private Course(Identifier id, CourseName name, CourseCategory category) {
-        this.id = id;
-        this.name = name;
-        this.category = category;
-    }
-
-    public Course(Identifier id, CourseName name, CourseCategory category, List<Training> trainings) {
+    public Course(final Identifier id, final CourseName name, final CourseCategory category,
+                  final List<Training> trainings) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.trainings = trainings;
     }
 
-    public static Course create(Identifier id, CourseName name, CourseCategory category) {
-        Course course = new Course(id, name, category);
+    public static Course create(final Identifier id, final CourseName name, final CourseCategory category,
+                                final List<Training> trainings) {
+        Course course = new Course(id, name, category, trainings);
         course.registerEvent(new CourseCreateEvent(id.value(), name.value(), category.value()));
         return course;
     }

@@ -4,26 +4,27 @@ import java.time.LocalDateTime;
 
 public class StudentRegisterCommand {
 
-    private String id;
+    private final String id;
 
-    private String fullname;
+    private final String fullname;
 
-    private String employeeId;
+    private final String employeeId;
 
-    private String email;
+    private final String email;
 
-    private Boolean active;
+    private final Boolean active;
 
-    private LocalDateTime incorporatedDate;
+    private final LocalDateTime incorporatedDate;
 
-    private String department;
+    private final String department;
 
-    private String position;
+    private final String position;
 
-    private String location;
+    private final String location;
 
-    public StudentRegisterCommand(String id, String fullname, String employeeId, String email, Boolean active,
-                                  LocalDateTime incorporatedDate, String department, String position, String location) {
+    public StudentRegisterCommand(final String id, final String fullname, final String employeeId, final String email,
+                                  final Boolean active, final LocalDateTime incorporatedDate, final String department,
+                                  final String position, final String location) {
         this.id = id;
         this.fullname = fullname;
         this.employeeId = employeeId;

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public abstract class DateTimeVO {
 
-    private LocalDateTime value;
+    private final LocalDateTime value;
 
     public DateTimeVO(LocalDateTime value) {
         ensureValueNonNull(value);

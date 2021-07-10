@@ -7,19 +7,19 @@ import java.util.Objects;
 
 public class Training extends AggregateRoot {
 
-    private Identifier id;
+    private final Identifier id;
 
-    private TrainingName name;
+    private final TrainingName name;
 
-    private TrainingDuration duration;
+    private final TrainingDuration duration;
 
-    public Training(Identifier id, TrainingName name, TrainingDuration duration) {
+    public Training(final Identifier id, final TrainingName name, final TrainingDuration duration) {
         this.id = id;
         this.name = name;
         this.duration = duration;
     }
 
-    public static Training create(Identifier id, TrainingName name, TrainingDuration duration) {
+    public static Training create(final Identifier id, final TrainingName name, final TrainingDuration duration) {
         return new Training(id, name, duration);
     }
 

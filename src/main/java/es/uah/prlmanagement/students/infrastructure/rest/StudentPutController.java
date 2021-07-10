@@ -17,13 +17,13 @@ public class StudentPutController {
 
     private final StudentMapper mapper;
 
-    public StudentPutController(StudentRegister register, StudentMapper mapper) {
+    public StudentPutController(final StudentRegister register, final StudentMapper mapper) {
         this.register = register;
         this.mapper = mapper;
     }
 
     @PutMapping("")
-    public ResponseEntity<?> execute(@RequestBody StudentDTO student) {
+    public ResponseEntity<?> execute(@RequestBody final StudentDTO student) {
         register.execute(mapper.toRegisterCommand(student));
         return ResponseEntity.ok().build();
     }

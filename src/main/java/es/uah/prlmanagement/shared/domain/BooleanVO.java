@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class BooleanVO {
 
-    private Boolean value;
+    private final Boolean value;
 
     public BooleanVO(Boolean value) {
         ensureValueNonNull(value);

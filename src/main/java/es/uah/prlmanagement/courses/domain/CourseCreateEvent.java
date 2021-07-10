@@ -6,11 +6,11 @@ import java.util.Objects;
 
 public class CourseCreateEvent extends DomainEvent {
 
-    private String name;
+    private final String name;
 
-    private String category;
+    private final String category;
 
-    public CourseCreateEvent(String aggregateId, String name, String category) {
+    public CourseCreateEvent(final String aggregateId, final String name, final String category) {
         super(aggregateId);
         this.name = name;
         this.category = category;

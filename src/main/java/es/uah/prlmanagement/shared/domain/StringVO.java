@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class StringVO {
 
-    private String value;
+    private final String value;
 
     public StringVO(String value) {
         ensureValueNonNull(value);

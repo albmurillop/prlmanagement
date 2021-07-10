@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Component
 public class StudentMapper {
 
-    public Student toDomain(StudentEntity student) {
+    public Student toDomain(final StudentEntity student) {
         return new Student(
             new Identifier(student.getId()),
             new StudentFullname(student.getFullname()),
@@ -39,7 +39,7 @@ public class StudentMapper {
         return students.stream().map(this::toDomain).collect(Collectors.toList());
     }
 
-    public StudentEntity toEntity(Student student) {
+    public StudentEntity toEntity(final Student student) {
         return new StudentEntity(
             student.id().value(),
             student.fullname().value(),
@@ -53,7 +53,7 @@ public class StudentMapper {
         );
     }
 
-    public StudentRegisterCommand toRegisterCommand(StudentDTO student) {
+    public StudentRegisterCommand toRegisterCommand(final StudentDTO student) {
         return new StudentRegisterCommand(
             student.id(),
             student.fullname(),

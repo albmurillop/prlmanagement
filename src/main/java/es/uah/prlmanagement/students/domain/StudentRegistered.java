@@ -12,7 +12,8 @@ public class StudentRegistered extends DomainEvent {
 
     private final String email;
 
-    public StudentRegistered(String aggregateId, String fullname, String employeeId, String email) {
+    public StudentRegistered(final String aggregateId, final String fullname, final String employeeId,
+                             final String email) {
         super(aggregateId);
         this.fullname = fullname;
         this.employeeId = employeeId;

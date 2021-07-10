@@ -9,7 +9,7 @@ public interface StudentRepository {
 
     List<Student> findAll();
 
-    Optional<Student> findOne(Identifier id);
+    Optional<Student> findOne(final Identifier id);
 
-    void save(Student student);
+    void save(final Student student);
 }

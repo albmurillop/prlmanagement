@@ -19,12 +19,12 @@ public class RabbitEventPublisher implements EventPublisher {
 
     private final AmqpTemplate rabbitTemplate;
 
-    public RabbitEventPublisher(AmqpTemplate rabbitTemplate) {
+    public RabbitEventPublisher(final AmqpTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
     @Override
-    public void execute(List<DomainEvent> events) {
+    public void execute(final List<DomainEvent> events) {
         events.forEach(event -> rabbitTemplate.convertAndSend(exchange, routingkey, events));
     }
 }

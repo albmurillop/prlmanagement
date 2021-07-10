@@ -7,7 +7,7 @@ import static java.util.UUID.fromString;
 
 public class Identifier implements Serializable {
 
-    private String value;
+    private final String value;
 
     public Identifier(String value) {
         ensureValidUUID(value);

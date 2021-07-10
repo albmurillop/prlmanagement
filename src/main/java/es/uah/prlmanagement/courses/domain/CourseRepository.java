@@ -9,7 +9,7 @@ public interface CourseRepository {
 
     List<Course> findAll();
 
-    Optional<Course> findOne(Identifier id);
+    Optional<Course> findOne(final Identifier id);
 
-    void save(Course course);
+    void save(final Course course);
 }

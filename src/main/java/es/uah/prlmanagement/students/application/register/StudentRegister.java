@@ -21,12 +21,12 @@ public class StudentRegister {
 
     private final EventPublisher eventPublisher;
 
-    public StudentRegister(StudentRepository repository, EventPublisher eventPublisher) {
+    public StudentRegister(final StudentRepository repository, final EventPublisher eventPublisher) {
         this.repository = repository;
         this.eventPublisher = eventPublisher;
     }
 
-    public void execute(StudentRegisterCommand studentRegisterCommand) {
+    public void execute(final StudentRegisterCommand studentRegisterCommand) {
         Student student = Student.register(
             new Identifier(studentRegisterCommand.id()),
             new StudentFullname(studentRegisterCommand.fullname()),

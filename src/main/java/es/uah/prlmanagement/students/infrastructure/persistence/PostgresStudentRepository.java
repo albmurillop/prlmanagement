@@ -16,7 +16,7 @@ public class PostgresStudentRepository implements StudentRepository {
 
     private final StudentMapper mapper;
 
-    public PostgresStudentRepository(StudentJpaRepository jpaRepository, StudentMapper mapper) {
+    public PostgresStudentRepository(final StudentJpaRepository jpaRepository, final StudentMapper mapper) {
         this.jpaRepository = jpaRepository;
         this.mapper = mapper;
     }
@@ -27,12 +27,12 @@ public class PostgresStudentRepository implements StudentRepository {
     }
 
     @Override
-    public Optional<Student> findOne(Identifier id) {
+    public Optional<Student> findOne(final Identifier id) {
         return jpaRepository.findById(id.value()).map(mapper::toDomain);
     }
 
     @Override
-    public void save(Student student) {
+    public void save(final Student student) {
         jpaRepository.save(mapper.toEntity(student));
     }
 }

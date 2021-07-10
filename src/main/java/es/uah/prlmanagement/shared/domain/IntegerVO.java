@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class IntegerVO {
 
-    private Integer value;
+    private final Integer value;
 
     public IntegerVO(Integer value) {
         ensureValueNonNull(value);
