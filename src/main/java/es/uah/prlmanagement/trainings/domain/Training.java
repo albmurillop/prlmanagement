@@ -1,11 +1,10 @@
 package es.uah.prlmanagement.trainings.domain;
 
-import es.uah.prlmanagement.shared.domain.AggregateRoot;
 import es.uah.prlmanagement.shared.domain.Identifier;
 
 import java.util.Objects;
 
-public class Training extends AggregateRoot {
+public class Training {
 
     private final Identifier id;
 
@@ -17,10 +16,6 @@ public class Training extends AggregateRoot {
         this.id = id;
         this.name = name;
         this.duration = duration;
-    }
-
-    public static Training create(final Identifier id, final TrainingName name, final TrainingDuration duration) {
-        return new Training(id, name, duration);
     }
 
     public Identifier id() {
