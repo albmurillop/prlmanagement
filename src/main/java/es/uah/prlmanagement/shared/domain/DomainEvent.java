@@ -13,8 +13,8 @@ public abstract class DomainEvent {
 
     public DomainEvent(final String aggregateId) {
         this.aggregateId = aggregateId;
-        this.eventId     = UUID.randomUUID().toString();
-        this.occurredOn  = LocalDateTime.now().toString();
+        this.eventId = UUID.randomUUID().toString();
+        this.occurredOn = LocalDateTime.now().toString();
     }
 
     public abstract String eventName();
